@@ -6,7 +6,7 @@
 
     ``` sh
     MONIKER=
-    CHAIN_ID=
+    CHAIN_ID="sentinelhub-2"
 
     sentinelhub init ${MONIKER} \
         --chain-id ${CHAIN_ID}
@@ -48,15 +48,28 @@
         curl -fsLS https://raw.githubusercontent.com/sentinel-official/networks/main/${CHAIN_ID}/persistent_peers.txt
         ```
 
-    * Go to the line which contains the field `seeds = ""`
-    * Insert the output of the below command
-
-        ``` text
-        curl -fsLS https://raw.githubusercontent.com/sentinel-official/networks/main/${CHAIN_ID}/seeds.txt
-        ```
-
-    * Save the file
+6. Download the latest snapshot of the blockchain ![https://github.com/c29r3/cosmos-snapshots/blob/main/Sentinel.md](https://github.com/c29r3/cosmos-snapshots/blob/main/Sentinel.md)
 
 ## Start
 
 1. Start the Sentinel Hub daemon
+
+### System Service
+
+Save the following in `/etc/systemd/system/sentinel.service`
+```
+[Unit]
+Description=SentinelHub
+After=network.target
+
+[Service]
+ExecStart=/home/sentinel/go/bin/sentinelhub start 
+User=sentinel
+LimitNOFILE=8192
+TimeoutStopSec=30min
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable the service: `sudo systemctl daemon-reload && sudo systemctl enable sentinel.service`
