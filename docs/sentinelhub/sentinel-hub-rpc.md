@@ -263,7 +263,7 @@ ss -atp | grep "4444"
 
 That's it. You are now running a full node.
 
-## Relaying your RPC Node
+## Relaying your RPC Node (Optional)
 
 To prevent censorship and become resistent to state actors, it is suggested that you have one or more other VPS or Dedicated Servers that you can relay the traffic from to the full node you just set up. The more the better as this can be a way to dynamically create alternating IP addresses for your Sentinel Node. 
 
@@ -278,7 +278,24 @@ sudo apt install iptables-persistent
 ```
 
 
-On your relay node do the following
+On your relay node do the following to enable port forwarding:
+
+```shell
+sudo nano /etc/sysctl.conf
+```
+
+And add the following
+
+```
+net.ipv4.ip_forward=1
+```
+
+Update 
+```shell
+sudo sysctl -p
+```
+
+Then begin the firewall rules
 
 ```shell
 RPCNODE="x.x.x.x"
