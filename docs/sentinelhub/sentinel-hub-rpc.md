@@ -1,5 +1,5 @@
 # Sentinel Full Node RPC/API
-In this document we will describe the processe in setting up a full node with RPC access to further decentralize the Sentinel Network. It is mandatory that Sentinel expands access to these types of nodes if it is to become fully decentralized with no single, or small point of failure/censorship. 
+In this document we will describe the process in setting up a full node with RPC access to further decentralise the Sentinel Network. It is mandatory that Sentinel expands access to these types of nodes if it is to become fully decentralised with no single, or small point of failure/censorship. 
 
 ## Current RPC/API Public Full Nodes
 
@@ -127,13 +127,13 @@ sudo cp -L /etc/letsencrypt/live/${MYDOMAIN}/fullchain.pem /etc/letsencrypt/live
 chown sentinel:sentinel ${HOME}/.sentinelhub/certs/*
 ```
 
-Now your that your certicates have been installed, we can configure sentinel hub.
+Now that your certicates have been installed we can configure sentinel hub.
 
 ## Sentinel Hub Config
 
 ### app.toml
 
-To configure the API access url set the following line in ``${HOME}/.sentinelhub/config/app.toml`:
+To configure the API access url set the following line in `${HOME}/.sentinelhub/config/app.toml`:
 
 ```
 address = "tcp://0.0.0.0:1317"
@@ -183,7 +183,7 @@ sudo ufw allow 4444/tcp && \
 sudo ufw allow 26656/tcp
 ```
 
-**NOTE**: when setting *max_open_connections* greater than the defualt, it requries chaning your *soft* file limits.
+**NOTE**: when setting *max_open_connections* greater than the defualt, it requries changing your *soft* file limits.
 
 First verify your soft file limits
 
@@ -265,9 +265,9 @@ That's it. You are now running a full node.
 
 ## Relaying your RPC Node
 
-To prevent censorship and become resistent to state actors, it is suggested that you have one or more other VPS or Dedicate Servers that you can relay the traffic from to the full node you just set up. The more the better as this can be a way to dynamically create alternating IP addresses for your Sentinel Node. 
+To prevent censorship and become resistent to state actors, it is suggested that you have one or more other VPS or Dedicated Servers that you can relay the traffic from to the full node you just set up. The more the better as this can be a way to dynamically create alternating IP addresses for your Sentinel Node. 
 
-Some states may decide to block access to an IP if it is running an RPC node, as this is a crucial point for the Sentinel Network to operatore. 
+Some states may decide to block access to an IP if it is running an RPC node, as this is a crucial point for the Sentinel Network to operate. 
 
 ### Setup
 
@@ -313,8 +313,14 @@ sudo ufw allow from ${RELAYNODE} to ${RPCNODE} port 4444 proto tcp
 
 Again, if hosting an API service as well do the same with port *1317*
 
+Save your iptables rules
+
+```shell
+sudo sh -c 'iptables-save > /etc/iptables/rules.v4'
+```
+
 # Notes
 
-That's it. You have now helped decentralize the Sentinel Network. Pat yourself on the back and hats off to you!
+That's it. You have now helped decentralise the Sentinel Network. Pat yourself on the back and hats off to you!
 
 
