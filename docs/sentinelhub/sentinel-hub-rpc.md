@@ -30,6 +30,18 @@ sudo adduser sentinel
 sudo -i -u sentinel
 ```
 
+Grant sudo access to sentinel
+
+```shell
+nano /etc/sudoers
+```
+
+Add the following line
+
+```
+sentinel ALL=(ALL:ALL) ALL
+```
+
 Get a copy of **golang** and unpack it
 
 ```shell
