@@ -16,8 +16,12 @@ In this document we will describe the process in setting up a full node with RPC
 
 If you add an RPC or API Node, please make a pull request to this README so we can have a central station for people to locate these services.
 
+## Installtion (Precompiled Binary)
+Get the latest binary here:
 
-## Installation
+![https://github.com/sentinel-official/hub/releases/tag/v0.9.2](https://github.com/sentinel-official/hub/releases/tag/v0.9.2)
+
+## Installation (Source)
 
 Requires [Go 1.16+](https://golang.org/dl/)
 
@@ -46,8 +50,8 @@ Get a copy of **golang** and unpack it
 
 ```shell
 cd ~ && \
-curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz && \
-tar -C ${HOME} -xvf go1.16.7.linux-amd64.tar.gz
+curl -OL https://golang.org/dl/go1.17.linux-amd64.tar.gz && \
+tar -C ${HOME} -xvf go1.17.linux-amd64.tar.gz
 ```
 
 Next edit `.profile` or `.bashrc` and add the following lines to the bottom of the file:
@@ -70,7 +74,7 @@ source .profile
 Then set the following variables
 
 ```shell
-VERSION=v0.8.3
+VERSION=v0.9.2
 BASE_DIRECTORY=${GOPATH}/src/github.com/sentinel-official
 ```
 
@@ -87,6 +91,8 @@ Build and install the software
 ```shell
 make install
 ```
+
+## Initialize sentinelhub
 
 Initialize the Sentinel Hub config
 
