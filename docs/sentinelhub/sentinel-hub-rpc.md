@@ -7,6 +7,7 @@ In this document we will describe the process in setting up a full node with RPC
 
 | Type    |   Endpoint    |
 | ----------- | ---------------- |
+|  RPC   |  https://rpc.mathnodes.com:443    | 
 |  RPC   |  https://rpc.mathnodes.com:4444   |
 |  RPC   |  https://rpc.mathnodes.com:8080   |
 |  API   |  https://api.sentinel.mathnodes.com |
