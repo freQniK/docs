@@ -14,7 +14,8 @@ In this document we will describe the process in setting up a full node with RPC
 |  RPC   |  https://rpc.sentinel.co:443   |
 |  RPC   | https://rpc.sentinel.smartnodes.one    |
 |  API   | https://api.sentinel.smartnodes.one    |
-|  RPC   | https://rpc-sentinel.itastakers.com:443 | 
+|  RPC   | https://rpc-sentinel.itastakers.com:443 |
+|  RPC   | https://rpc-sentinel.keplr.app:443  |
 
 If you add an RPC or API Node, please make a pull request to this README so we can have a central station for people to locate these services.
 
